@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    
+    {%block title%}
+    <title>Ideias - Casa Criativa</title> 
+    {%endblock title%}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Criativa</title>
+     {%include "head_content.html"%}
+</head>
+
+<body id="{{bodyId}}">
+   
+     <div id="container">
+
+     {%block content %}
+     {%endblock%}
+
+    </div>
+    {%include "modal.html"%} 
+
+    <script src="/script.js"></script>
+
+ 
+
+</body>
+
+</html>

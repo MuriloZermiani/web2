@@ -1,0 +1,254 @@
+semana omnistack
+
+FRONT-END = HTML, CSS, JAVASCRIPT
+
+BACK-END = 
+
+CRIAR SISTEMAS ONDE SE PODE CADASTRAR ID�IAS;
+
+COMENT�RIO : <!-- -->
+
+HTML: Hypertext Marckup Language
+
+hypertext: texto que aceita link, ou seja, redireciona a alguma pagina
+
+marckup: marca��o feita com <tag>
+
+language: linguagem obs. html n�o � uma linguagem de programa��o;
+ 
+
+UTILIZAR FIGMA.COM PARA CRIAR LAYOUTS
+
+definir as instru��es css em box(caixa)
+
+display block: display que ocupa toda a linha fazendo uma quebra de linha
+fazendo com que o pr�ximo elemento fique na pr�xima linha, a largura deste
+ocupa a parte toda da linha onde ele est� contido. 
+
+
+display inline-block: vai fazer com o que elementos fiquem em linha
+um ao lado do outro e so vai pegar de largura o que � do tamanho dele.
+
+/*#buttons,footer{
+    text-align: center;
+    margin-bottom: 32px;
+}sempre que tiver situações iguais, agrupe utilizando 
+    virgula*/
+
+     display: flex; /*Define a direção dos flex itens. 
+    Por padrão ele é row (linha), por isso quando o "display: flex"
+    é adicionado, os elementos ficam em linha, um do lado do outro.
+    A mudança de row para column geralmente acontece quando 
+    estamos definindo os estilos em media queries para o mobile.
+     Assim você garante que o conteúdo seja apresentado em coluna única.*/
+
+     cursor: pointer; : altera o cursor  de seta para a mão de seleção padrão
+     que indica algo a ser clicado na web
+
+     outline: inclui ou retira a marcação de click em um button
+
+     button:hover{text-decoration: underline;}: o button:hover nada mais
+     é do que uma instrução quando o mouse está em cima do button,
+     por isso o hover. no exemplo a cima, ele está fazendo com que toda vez
+     que eu passar o cursor do mouse por cima do botão, apareça uma linha
+     embaixo.
+
+     pra que serve o formulario? o html ate agora esta mostrando as coisas
+     e interagindo a clicks em alguma parte da pagina porem nao esta enviando 
+     dados pelo html ainda.
+     pra isso, envio de informaçoes, sejam pessoais o que estiver proposto.
+
+      position: absolute;
+    top:0;
+    /*quando eu habilito o position, com ele vem algumas funcionalidades
+    top 0 por exemplo vai elevar meu conteudo pra cima da pagina, 
+    bottom 0 pra baixo right 0 direita total e left 0 esquerda, se eu acionar 
+    elementos eu ocuparei toda a pagina;*/
+
+      align-items: center; /*mover itens de cima abaixo*/
+    justify-content: center; /*mover itens de um lado pro outro*/
+
+{
+.content form div:nth-child(3),
+.content form div:nth-child(4),
+.content form div:nth-child(5){
+   grid-column: span 2;
+
+o que e? pegue uma div "filho" dentro de uma div maior e implemente 
+mais uma coluna dentro do seu formulario, no caso acima, pegue 3 divs 
+}
+
+{
+     justify-self: end;
+
+     quando isso é acionado ele automaticamente joga o elemento para o 
+     final da pagina, container etc;
+}
+
+li*3>a - atalho chamando de uma só vez 3 listas com "a href" em cada uma delas 
+
+                          BACK-END
+
+    back-end é a raiz do site
+
+    Responsabilidades: *Receber pedidos do cliente
+                       * Devolver resposta
+                       * Regras de negócio
+                       *Dados
+
+    Tecnologias Utilizadas: *Banco de dados
+                            * Node.js    
+
+                            //Vamos falar de coisas básicas da programação em javascript
+
+//variáveis
+// declarando uma variavel : const mensagem = "oi, como vai?"
+// chamando a variavel: console.log(mensagem)
+// declarando uma variável numérica: const number = 2.5
+// Todo objeto possui "propriedades", "atributos" e "funcionalidades"
+//ex:
+/*function soma(numero1 , numero2){
+  return numero1+numero2;
+}
+
+const somar= soma(30,20)
+console.log(somar)*/
+
+/*ex
+const xicara={
+
+    cor:"white",
+    tamanho: 10,
+    estaSujo(simNao){
+        //logica de programação
+        console.log(simNao) 
+    }
+
+}
+
+
+xicara.estaSujo("sim")
+const cor = "preto"
+const tamanho = 5
+function sujo(esta){
+    console.log(esta)
+        
+    }
+
+const xicara2 = {
+    cor,
+    tamanho,
+    sujo
+}    
+*/               
+
+inicia com o comando "npm init -y", cria um arquivo .json de servidor
+
+npm init -y : significa que o visual pode iniciar um projeto e pode 
+colocar yes pra tudo o que ele fizer;
+
+feito esse comando será aberto um novo arquivo dentro do projeto chamando
+"package.json".
+
+package.json: JSON significa: javascript.object.notation
+
+
+
+server.get("/",function(req,res){
+    console.log("cheguei")
+}): neste comando eu to chamando o get, e dando a ele uma função dupla
+passando os parametros, requisição e resposta
+
+{server.get("/",function(req,res){
+    return res.sendfile("index.html")
+
+neste comando eu estou enviando meu front-end para a web ja pelo meu servidor
+
+}
+
+
+//array (vetores):
+const latinhas = [
+    {marca:"coca-cola"},
+    {marca:"pepsi"}
+]
+
+npm i nunjucks - gerador de variáveis
+
+  {% for ideia in ideias %}
+            <div class="ideia">
+                <img src="{{ideia.img}}" alt="Imagem de {{ideia.title}}">
+
+                <div class="content">
+                    <h3>{{ideia.title}}</h3>
+                    <p>{{ideia.category}}</p>
+                    <div class="description">
+                       {{ideia.description}}
+                    </div>
+                    <a href="{{ideia.url}} target_blank"></a>
+                </div>
+            </div>
+            
+            
+            {% endfor %}
+
+            
+    {%include "modal.html"%} /*chamando o modal.html que esta na pasta views*/
+
+    
+
+script
+
+const ideas= [
+    /*
+    {
+        img:"https://image.flaticon.com/icons/svg/2729/2729007.svg",
+    title:"Cursos de Programação",
+    category:"Estudo",
+    description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+    url:"https://rocketseat.com.br"
+    },
+
+    {
+        img:"https://image.flaticon.com/icons/svg/2729/2729005.svg",
+    title:"Exercícios",
+    category:"Saúde",
+    description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+    url:"https://rocketseat.com.br"
+    },
+
+    {
+        image:"https://image.flaticon.com/icons/svg/2729/2729027.svg",
+    title:"Meditação",
+    category:"Mentalidade",
+    description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+    link:"https://rocketseat.com.br"
+    },
+
+    {
+        img:"https://image.flaticon.com/icons/svg/2729/2729032.svg",
+    title:"Karaokê",
+    category:"Diversão em Família",
+    description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+    url:"https://www.youtube.com/watch?v=p-eFhhyjvWc"
+    },
+
+     {
+        img:"https://image.flaticon.com/icons/svg/2729/2729075.svg",
+    title:"Pausa pro Café",
+    category:"Essencial",
+    description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+    url:"https://www.youtube.com/watch?v=p-eFhhyjvWc"
+    },
+
+     {
+        img:"https://image.flaticon.com/icons/svg/2729/2729042.svg",
+    title:"TV",
+    category:"Momento Família",
+    description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+    url:"https://www.youtube.com/watch?v=p-eFhhyjvWc"
+    },
+    */
+]
+
+
